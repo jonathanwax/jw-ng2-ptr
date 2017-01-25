@@ -20,7 +20,7 @@ import {
 
 import { DataService } from './data.service';
 
-describe('DataService', () => {
+fdescribe('DataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [

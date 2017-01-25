@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { ListComponent } from './list/list.component';
 import { DetailComponent } from './detail/detail.component';
 
-
+import { APP_BASE_HREF } from '@angular/common';
 
 const routes: Routes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -26,6 +26,9 @@ const routes: Routes = [
     ],
     exports: [
         RouterModule
+    ],
+    providers: [
+        { provide: APP_BASE_HREF, useValue: '/' }
     ]
 })
 

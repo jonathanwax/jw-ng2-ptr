@@ -3,10 +3,14 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
+import { AppRoutingModule, routingComponents } from './app.routes';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
+import { HomeComponent } from './home/home.component';
 
 import { HeaderComponent } from './header/header.component';
 import { ListComponent } from './list/list.component';
@@ -14,22 +18,27 @@ import { DetailComponent } from './detail/detail.component';
 
 import { DataService } from './data.service';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
         HeaderComponent,
         ListComponent,
-        DetailComponent
+        DetailComponent,
+        routingComponents,
+        HomeComponent
       ],
       imports: [
         BrowserModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpModule
+        HttpModule,
+        AppRoutingModule
       ],
-      providers: [DataService]
+      providers: [
+        DataService
+      ]
     });
     TestBed.compileComponents();
   });
